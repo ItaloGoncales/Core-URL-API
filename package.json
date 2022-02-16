@@ -1,0 +1,15 @@
+{
+  "name": "small-url",
+  "version": "0.0.1",
+  "description": "API to short URLs",
+  "main": "server.js",
+  "author": "Italo Gonçales",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0"
+  }
+}
