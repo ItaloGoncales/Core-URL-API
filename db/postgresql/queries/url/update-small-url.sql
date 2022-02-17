@@ -1,1 +1,1 @@
-UPDATE url SET url = $1, "expirationDate" = $2 WHERE id = $3
+UPDATE url SET url = $1, "expirationDate" = $2 WHERE id = $3 RETURNING *
