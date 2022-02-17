@@ -1,10 +1,25 @@
-var express = require("express");
+const express = require("express"),
+  DB = require("./lib/DB"),
+  SQLLoader = require("./lib/SQLLoader");
 
 const dotenv = require("dotenv");
 dotenv.config();
 
-var app = express();
-var port = process.env.PORT || 3100;
+const app = express();
+const port = process.env.PORT || 3100;
+
+// Connect with database
+DB.connect(
+  process.env.PG_HOST,
+  process.env.PG_USER,
+  process.env.PG_PWD,
+  process.env.PG_DATABASE,
+  process.env.PG_PORT
+);
+
+SQLLoader.loadQueries().catch((err) => {
+  throw err;
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +40,7 @@ app.use(function (err, req, res, next) {
 require("./routes")(app);
 
 app.route("/").get(function (req, res) {
-  res.json({ message: "Atom URL API" });
+  res.json({ message: "Core URL API" });
 });
 
 app.use(function (req, res) {
@@ -36,4 +51,4 @@ app.use(function (req, res) {
 });
 
 app.listen(port);
-console.log("Atom URL API server started on: " + port);
+console.log("Core URL API server started on: " + port);
