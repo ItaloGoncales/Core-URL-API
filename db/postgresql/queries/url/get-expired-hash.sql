@@ -1,0 +1,1 @@
+SELECT * FROM url WHERE "expirationDate" < now() LIMIT 1

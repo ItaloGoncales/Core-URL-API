@@ -6,9 +6,11 @@
   "author": "Italo Gonçales",
   "license": "MIT",
   "dependencies": {
+    "btoa": "^1.2.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^8.9.0"

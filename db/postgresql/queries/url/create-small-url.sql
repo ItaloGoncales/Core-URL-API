@@ -1,0 +1,1 @@
+INSERT INTO url (hash, url) VALUES ($1, $2) RETURNING *

@@ -4,6 +4,7 @@ module.exports = function (app) {
 
   app.route("/:code").get(smallUrl.redirectToUrl);
 
-  app.route("/v1/:code").get(smallUrl.getSmallUrl);
-  app.route("/v1/:code/lite").get(smallUrl.getLiteSmallUrl);
+  app.route("/v1/url").post(smallUrl.createSmallUrl);
+  app.route("/v1/url/:code").get(smallUrl.getSmallUrl);
+  app.route("/v1/url/:code/lite").get(smallUrl.getLiteSmallUrl);
 };
